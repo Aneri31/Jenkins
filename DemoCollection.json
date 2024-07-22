@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "cd6a08fe-d114-4d7f-b132-1e1124780223",
+		"name": "Testing Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36804077"
+	},
+	"item": [
+		{
+			"name": "Get request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"tests[\"Status Code should be 201\"] = responseCode.code === 201\r",
+							" tests[\"Response time lesser than 10ms\"] = responseTime<10\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"id\": 11,\r\n \"name\": \"Tutorialspoint\",\r\n \"username\": \"Test1\",\r\n \"email\": \"abc@gmail.com\",\r\n \"address\": {\r\n \"street\": \"qa street\",\r\n \"suite\": \"Apt 123\",\r\n \"city\": \"Kochi\",\r\n\"zipcode\": \"49085\",\r\n \"geo\": {\r\n \"lat\": \"-3.3155\",\r\n \"lng\": \"94.156\"\r\n }\r\n },\r\n \"phone\": \"99599125\",\r\n \"website\": \"Tutorialspoint.com\",\r\n \"company\": {\r\n \"name\": \"Tutorialspoint\",\r\n \"catchPhrase\": \"Simple Easy Learning\",\r\n \"bs\": \"Postman Tutorial\"\r\n }\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/delete/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
